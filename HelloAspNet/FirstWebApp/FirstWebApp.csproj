@@ -67,11 +67,60 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Main.css" />
+    <Content Include="FrmAppSession.aspx" />
+    <Content Include="FrmPageLoad.aspx" />
+    <Content Include="FrmRequest.aspx" />
+    <Content Include="FrmResponseBuffer.aspx" />
+    <Content Include="FrmResponseWrite.aspx" />
+    <Content Include="FrmServer.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Index.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAppSession.aspx.cs">
+      <DependentUpon>FrmAppSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmAppSession.aspx.designer.cs">
+      <DependentUpon>FrmAppSession.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPageLoad.aspx.cs">
+      <DependentUpon>FrmPageLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmPageLoad.aspx.designer.cs">
+      <DependentUpon>FrmPageLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRequest.aspx.cs">
+      <DependentUpon>FrmRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmRequest.aspx.designer.cs">
+      <DependentUpon>FrmRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmResponseBuffer.aspx.cs">
+      <DependentUpon>FrmResponseBuffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmResponseBuffer.aspx.designer.cs">
+      <DependentUpon>FrmResponseBuffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmResponseWrite.aspx.cs">
+      <DependentUpon>FrmResponseWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmResponseWrite.aspx.designer.cs">
+      <DependentUpon>FrmResponseWrite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FrmServer.aspx.cs">
+      <DependentUpon>FrmServer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmServer.aspx.designer.cs">
+      <DependentUpon>FrmServer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

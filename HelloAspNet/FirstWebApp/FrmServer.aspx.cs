@@ -7,17 +7,12 @@ using System.Web.UI.WebControls;
 
 namespace FirstWebApp
 {
-    public partial class Index : Page
+    public partial class FrmServer : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-        }
-
-        protected void BtnClick_Click(object sender, EventArgs e)
-        {
-            LblResult.Text = $"안녕하세요 ,{TxtDisplay.Text }";
-            Response.Write("안뇽하세요<br />");
+            LblServerPath.Text = Server.MapPath("."); // 페이지 경로
+            LblRequest.Text = Request.ServerVariables["SCRIPT_NAME"]; // URL
         }
     }
 }
