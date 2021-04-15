@@ -54,9 +54,10 @@
                                     Eval("PostDate")) %>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:BoundField DataField="Name" HeaderText="작성자"
-                           HeaderStyle-Width="60px"
-                            ItemStyle-HorizontalAlign="Center"/>
+                         <asp:BoundField DataField="ReadCount" HeaderText="조회수"
+                            ItemStyle-HorizontalAlign="Right"
+                            HeaderStyle-Width="60px"></asp:BoundField>
+
                     </Columns>
                 </asp:GridView>
             </div>
