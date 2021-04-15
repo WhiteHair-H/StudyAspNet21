@@ -6,6 +6,7 @@ namespace Helpers.Test
     [TestClass]
     public class StringLibraryTest
     {
+        [Ignore]
         [TestMethod]
         public void CutStringTest()
         {
@@ -18,7 +19,7 @@ namespace Helpers.Test
 
             
         }
-
+        [Ignore]
         [TestMethod]
         public void CutStringUnicodeTest()
         {
@@ -30,6 +31,24 @@ namespace Helpers.Test
             Assert.AreEqual(expected, actual);
 
         }
+        [TestMethod]
+        
+        public void IsPhotoTest()
+        {
+            var ImagePath = @"D:\GitRepository\StudyDesktopApp\WPFApp\main.png";
+            bool result = BoardLibrary.IsPhoto(ImagePath);
+            Assert.IsTrue(result, "file extension must be png, jpg, gif");
 
+        }
+
+        [TestMethod]
+
+        public void IsNotPhotoTest()
+        {
+            var ImagePath = @"D:\GitRepository\StudyDesktopApp\WPFApp\main.pdf";
+            bool result = BoardLibrary.IsPhoto(ImagePath);
+            Assert.IsFalse(result, "file extension must be png, jpg, gif");
+
+        }
     }
 }
