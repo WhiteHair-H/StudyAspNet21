@@ -86,7 +86,7 @@ namespace DotNetNote.Board
             txtTitle.Text = $"답변 : {note.Title}";
             txtContent.Text = $"\n\n작성일 : {note.PostDate} , 작성자 : '{note.Name}'\n--------------------\n" +
                 $"{note.Content.Replace("\n", "\n>")}\n--------------------\n";
-                 
+
 
         }
 
@@ -104,6 +104,8 @@ namespace DotNetNote.Board
                 else if (ViewState["_Mode"].ToString() == "Reply") FormType = BoardWriteFormType.Reply;
                 else FormType = BoardWriteFormType.Write;
 
+                UploadProcess();
+
                 Note note = new Note();
                 note.Id = Convert.ToInt32(_Id);
                 note.Name = txtName.Text;
@@ -111,8 +113,8 @@ namespace DotNetNote.Board
                 note.Title = txtTitle.Text;
                 note.Homepage = txtHomepage.Text;
                 note.Content = txtContent.Text;
-                note.FileName = "";
-                note.FileSize = 0;
+                note.FileName = _FileName;
+                note.FileSize = _FileSize;
                 note.Password = txtPassword.Text;
                 note.PostIp = Request.UserHostAddress;
                 note.Encoding = rdoEncoding.SelectedValue;
@@ -128,6 +130,10 @@ namespace DotNetNote.Board
                     case BoardWriteFormType.Modify:
                         note.ModifyIp = Request.UserHostAddress;
                         // TODO : 파일처리
+                        note.FileName = ViewState["FileName"].ToString();
+                        note.FileSize = Convert.ToInt32(ViewState["FileSize"]);
+
+
                         if (repo.UpdateNote(note) > 0) Response.Redirect($"BoardView.aspx?Id{_Id}");
                         else lblError.Text = "업데이트 실패, 암호를 확인하세요";
                         break;
@@ -153,13 +159,13 @@ namespace DotNetNote.Board
         private void UploadProcess()
         {
             // 파일 업로드 처리 시작
-            _BaseDir = Server.MapPath("./MyFiles");
+            _BaseDir = Server.MapPath("../Files");
             _FileName = String.Empty;
             _FileSize = 0;
             if (txtFileName.PostedFile != null)
             {
-                if (txtFileName.PostedFile.FileName.Trim().Length > 0
-                    && txtFileName.PostedFile.ContentLength > 0)
+                if (txtFileName.PostedFile.FileName.Trim().Length > 0 && 
+                    txtFileName.PostedFile.ContentLength > 0)
                 {
                     if (FormType == BoardWriteFormType.Modify)
                     {
@@ -175,15 +181,10 @@ namespace DotNetNote.Board
                     }
                     else // BoardWrite, BoardReply
                     {
-                        _FileName =
-                            FileUtility.GetFileNameWithNumbering(
-                                _BaseDir,
-                                    Path.GetFileName(
-                                        txtFileName.PostedFile.FileName));
+                        _FileName = FileUtility.GetFileNameWithNumbering( _BaseDir, Path.GetFileName(txtFileName.PostedFile.FileName));
                         _FileSize = txtFileName.PostedFile.ContentLength;
                         // 업로드 처리 : SaveAs()
-                        txtFileName.PostedFile.SaveAs(
-                            Path.Combine(_BaseDir, _FileName));
+                        txtFileName.PostedFile.SaveAs(Path.Combine(_BaseDir, _FileName));
                     }
                 }
             }// 파일 업로드 처리 끝

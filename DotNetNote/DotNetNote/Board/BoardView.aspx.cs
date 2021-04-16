@@ -64,24 +64,24 @@ namespace DotNetNote.Board
 
 
 
-            //if (note.FileName.Length > 1)
-            //{
-            //    lblFile.Text = String.Format(
-            //        "<a href='./BoardDown.aspx?Id={0}'>" 
-            //        + "{1}{2} / 전송수: {3}</a>", 
-            //        note.Id, 
-            //        "<img src=\"/images/ext/ext_zip.gif\" border=\"0\">", 
-            //        note.FileName, note.DownCount);
-            //    if (Helpers.BoardLibrary.IsPhoto(note.FileName))
-            //    {
-            //        ltrImage.Text = "<img src=\'ImageDown.aspx?FileName=" 
-            //            + $"{Server.UrlEncode(note.FileName)}\'>";
-            //    }
-            //}
-            //else
-            //{
-            //    lblFile.Text = "(업로드된 파일이 없습니다.)";
-            //}
+            if (note.FileName.Length > 1)
+            {
+                lblFile.Text = String.Format(
+                    "<a href='./BoardDown.aspx?Id={0}'>"
+                    + "{1}{2} / 전송수: {3}</a>",
+                    note.Id,
+                    "<img src=\"/images/ext/ext_zip.gif\" border=\"0\">",
+                    note.FileName, note.DownCount);
+                if (Helpers.BoardLibrary.IsPhoto(note.FileName))
+                {
+                    ltrImage.Text = "<img src=\'ImageDown.aspx?FileName="
+                        + $"{Server.UrlEncode(note.FileName)}\'>";
+                }
+            }
+            else
+            {
+                lblFile.Text = "(업로드된 파일이 없습니다.)";
+            }
         }
     }
 }

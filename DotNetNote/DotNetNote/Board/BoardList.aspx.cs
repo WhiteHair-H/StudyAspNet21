@@ -14,6 +14,9 @@ namespace DotNetNote.Board
 
         //검색모드 이면 true, 보통 false
         public bool SearchMode { get; set; } = false;
+        public string SearchField { get; set; } // 검색 필드: Name, Title, ...
+        public string SearchQuery { get; set; } // 검색 내용
+
 
         public int RecordCount = 0;
 
@@ -21,18 +24,40 @@ namespace DotNetNote.Board
 
         public BoardList()
         {
-           _repo = new DbRepository(); // splconnection 생성
+            _repo = new DbRepository(); // splconnection 생성
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            // 검색모드 결정
+            SearchMode =
+               (!string.IsNullOrEmpty(Request["SearchField"]) &&
+                   !string.IsNullOrEmpty(Request["SearchQuery"]));
+
+            if (SearchMode)
+            {
+                SearchField = Request["SearchField"];
+                SearchQuery = Request["SearchQuery"];
+            }
+
             if (!SearchMode)
             {
                 RecordCount = _repo.GetCountAll();
             }
-            LblTotalRecord.Text = $"Total Record : {RecordCount}";
+            else
+            {
+                RecordCount = _repo.GetCountBySearch(SearchField, SearchQuery);
+            }
 
-            if(Request["Page"] != null)
+
+
+            if (!SearchMode)
+            {
+                RecordCount = _repo.GetCountAll();
+            }
+            LblTotalRecord.Text = $"총 검색된 결과는 {RecordCount}개 입니다.";
+
+            if (Request["Page"] != null)
             {
                 PageIndex = Convert.ToInt32(Request["Page"]) - 1;
             }
@@ -60,7 +85,14 @@ namespace DotNetNote.Board
             {
                 GrvNotes.DataSource = _repo.GetAll(PageIndex);
             }
+            else
+            {
+                GrvNotes.DataSource = _repo.GetSeachAll(PageIndex, SearchField, SearchQuery);
+            }
+
             GrvNotes.DataBind(); // 데이터바인딩 끝
+
+
         }
     }
 }
