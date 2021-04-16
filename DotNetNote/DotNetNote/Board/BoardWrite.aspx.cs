@@ -12,9 +12,12 @@ namespace DotNetNote.Board
 {
     public partial class BoardWrite : System.Web.UI.Page
     {
-        public BoardWriteFormType FormType { get; set; } = BoardWriteFormType.Write; //기본값 : 글쓰기
+        public BoardWriteFormType FormType { get; set; }//기본값 : 글쓰기
 
         private string _Id;//앞(리스트)에서 넘겨져 온 번호 저장
+        // private string _Mode; // 뷰에서 넘겨주는 모드값 // Edit , Reply
+
+
 
         private string _BaseDir = String.Empty;//파일 업로드 폴더
         private string _FileName = String.Empty;//파일명 저장 필드
@@ -27,6 +30,11 @@ namespace DotNetNote.Board
 
             if (!Page.IsPostBack) // 처음 로드할 때만 바인딩
             {
+                ViewState["_Mode"] = Request["Mode"]; // Edit
+                if (ViewState["_Mode"].ToString() == "Edit") FormType = BoardWriteFormType.Modify;
+                else if (ViewState["_Mode"].ToString() == "Reply") FormType = BoardWriteFormType.Reply;
+                else FormType = BoardWriteFormType.Write;
+
                 switch (FormType)
                 {
                     case BoardWriteFormType.Write:
@@ -47,29 +55,54 @@ namespace DotNetNote.Board
 
             }
         }
+        private void DisplayDataForModify()
+        {
+            var repo = new DbRepository();
+            Note note = repo.GetNoteById(Convert.ToInt32(_Id));
+            txtName.Text = note.Name;
+            txtEmail.Text = note.Email;
+            txtHomepage.Text = note.Homepage;
+            txtContent.Text = note.Content;
+
+            //Encoding
+
+            string encoding = note.Encoding;
+            if (encoding == "Text") rdoEncoding.SelectedIndex = 0;
+            else if (encoding == "Mixed") rdoEncoding.SelectedIndex = 2;
+            else rdoEncoding.SelectedIndex = 1;
+
+
+            // TODO : 파일처리
+
+
+
+        }
 
         private void DisplayDataForReply()
         {
-            throw new NotImplementedException();
+            var repo = new DbRepository();
+            Note note = repo.GetNoteById(Convert.ToInt32(_Id));
+
+            txtTitle.Text = $"답변 : {note.Title}";
+            txtContent.Text = $"\n\n작성일 : {note.PostDate} , 작성자 : '{note.Name}'\n--------------------\n" +
+                $"{note.Content.Replace("\n", "\n>")}\n--------------------\n";
+                 
+
         }
 
-        private void DisplayDataForModify()
-        {
-            throw new NotImplementedException();
-        }
 
         protected void chkUpload_CheckedChanged(object sender, EventArgs e)
         {
-
+            pnlFile.Visible = !pnlFile.Visible;
         }
 
         protected void btnWrite_Click(object sender, EventArgs e)
         {
             if (IsImageTextCorrect())
             {
-                UploadProcess(); // 파일 업로드 관련 코드 분리
-
-
+                if (ViewState["_Mode"].ToString() == "Edit") FormType = BoardWriteFormType.Modify;
+                else if (ViewState["_Mode"].ToString() == "Reply") FormType = BoardWriteFormType.Reply;
+                else FormType = BoardWriteFormType.Write;
 
                 Note note = new Note();
                 note.Id = Convert.ToInt32(_Id);
@@ -93,10 +126,19 @@ namespace DotNetNote.Board
                         Response.Redirect("BoardList.aspx");
                         break;
                     case BoardWriteFormType.Modify:
+                        note.ModifyIp = Request.UserHostAddress;
+                        // TODO : 파일처리
+                        if (repo.UpdateNote(note) > 0) Response.Redirect($"BoardView.aspx?Id{_Id}");
+                        else lblError.Text = "업데이트 실패, 암호를 확인하세요";
                         break;
                     case BoardWriteFormType.Reply:
+                        note.ParentNum = Convert.ToInt32(_Id);
+                        repo.ReplyNote(note);
+                        Response.Redirect("BoardList.aspx");
                         break;
                     default:
+                        repo.Add(note);
+                        Response.Redirect("BoardList.aspx");
                         break;
                 }
 

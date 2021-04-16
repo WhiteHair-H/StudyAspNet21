@@ -16,8 +16,8 @@ namespace DotNetNote.Board
         protected void Page_Load(object sender, EventArgs e)
         {
             lnkDelete.NavigateUrl = $"BoardDelete.aspx?Id={Request["Id"]}";
-            lnkModify.NavigateUrl = $"BoardModify.aspx?Id={Request["Id"]}";
-            lnkReply.NavigateUrl = $"BoardReply.aspx?Id={Request["Id"]}";
+            lnkModify.NavigateUrl = $"BoardWrite.aspx?Id={Request["Id"]}&Mode=Edit";
+            lnkReply.NavigateUrl = $"BoardWrite.aspx?Id={Request["Id"]}&Mode=Reply";
 
 
             _Id = Request["Id"];

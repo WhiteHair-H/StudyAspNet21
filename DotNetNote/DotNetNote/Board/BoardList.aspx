@@ -24,6 +24,7 @@
                             HeaderStyle-Width="350px"
                             ItemStyle-HorizontalAlign="Left" >
                             <ItemTemplate>
+                                <%# Helpers.BoardLibrary.FuncStep(Eval("Step")) %>
                                 <asp:HyperLink ID="lnkTitle" runat="server"
                                     NavigateUrl= '<%# "BoardView.aspx?Id=" + Eval("Id") %>'>
                                     <%#Eval("Title") %>
@@ -75,7 +76,7 @@
     <div class="container">
         <div class="col">
             <div class="text-right">
-                <a href="BoardWrite.aspx" class="btn btn-primary">글쓰기</a>
+                <a href="BoardWrite.aspx?Mode=Write" class="btn btn-primary">글쓰기</a>
             </div>
         </div>
     </div>
