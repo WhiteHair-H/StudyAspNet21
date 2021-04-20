@@ -28,7 +28,10 @@ namespace RealPortFolio.Controllers
             return View();
         }
 
-       
+        public IActionResult PortFolioDetails()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
