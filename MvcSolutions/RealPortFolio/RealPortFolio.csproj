@@ -14,12 +14,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\assets\vendor\owl.carousel\LICENSE" />
+    <None Include="wwwroot\assets\vendor\owl.carousel\owl.carousel.js" />
+    <None Include="wwwroot\assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <None Include="wwwroot\assets\vendor\owl.carousel\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="5.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.5" />
+    <PackageReference Include="Owl.Carousel.2" Version="2.0.1" />
   </ItemGroup>
 
 </Project>
