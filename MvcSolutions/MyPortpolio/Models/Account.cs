@@ -12,9 +12,16 @@ namespace MyPortpolio.Models
         public int Id { get; set; }
 
         public string Name { get; set; }
-        
+
+        [Required(ErrorMessage = "이메일은 필수입니다")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(125)]
+
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "이메일은 필수입니다")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(20)]
         public string Password { get; set; }
 
         public string Grade { get; set; }
