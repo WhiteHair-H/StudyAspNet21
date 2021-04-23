@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor hca
+
+<header>
+    <!-- Header Start -->
+    <div class="header-area header-sticky">
+        <div class="header-wrapper  d-flex flex-wrap align-items-center justify-content-between">
+            <!-- Logo -->
+            @*<div class="logo">
+                    <a href="~/Home/Index"><img src="~/assets/img/logo/logo.png" alt=""></a>
+                </div>*@
+            <!-- Main-menu -->
+            <div class="main-menu d-lg-block center">
+                <nav class="center">
+                    <ul id="navigation">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Servies">
+                                Profile
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="History">
+                                PortFolio
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Gallery">
+                                Board
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                                Contact
+                            </a>
+                        </li>
+
+
+                        @if (string.IsNullOrEmpty(hca.HttpContext.Session.GetString("UserEmail")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+
+                            </li>
+                        }
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

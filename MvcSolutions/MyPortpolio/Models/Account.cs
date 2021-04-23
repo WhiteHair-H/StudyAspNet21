@@ -19,8 +19,8 @@ namespace MyPortpolio.Models
 
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "이메일은 필수입니다")]
-        [DataType(DataType.EmailAddress)]
+        [Required(ErrorMessage = "비밀번호는 필수입니다")]
+        [DataType(DataType.Password)]
         [StringLength(20)]
         public string Password { get; set; }
 
