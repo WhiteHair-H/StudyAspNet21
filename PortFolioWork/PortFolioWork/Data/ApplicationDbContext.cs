@@ -14,6 +14,9 @@ namespace PortFolioWork.Data
         {
         }
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Board> Boards { get; set; }
+        public DbSet<Contact> Contact { get; set; }
+        public DbSet<PortFolioWork.Models.Managers> Managers { get; set; }
 
     }
 }

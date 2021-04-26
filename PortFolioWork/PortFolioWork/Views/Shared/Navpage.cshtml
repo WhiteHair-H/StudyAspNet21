@@ -27,18 +27,18 @@
 
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="History">
-                                PortFolio
+                                Style
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Gallery">
+                            <a class="nav-link" asp-area="" asp-controller="Board" asp-action="Index">
                                 Board
                             </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact">
+                            <a class="nav-link" asp-area="" asp-controller="Contact" asp-action="Index">
                                 Contact
                             </a>
                         </li>
@@ -46,17 +46,19 @@
 
                         @if (string.IsNullOrEmpty(hca.HttpContext.Session.GetString("UserEmail")))
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                            </li>
-                        }
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+            </li> }
+
                         else
                         {
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+            <li class="nav-item">
+                <a class="nav-link" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
 
-                            </li>
-                        }
+            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Manager" asp-action="Index">Admin</a>
+                            </li>}
 
                     </ul>
                 </nav>

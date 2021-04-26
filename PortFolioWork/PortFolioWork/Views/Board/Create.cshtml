@@ -1,0 +1,49 @@
+﻿@model PortFolioWork.Models.Board
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_GalleryLayout.cshtml";
+}
+
+<script src="~/plugin/ckeditor/ckeditor.js"></script>
+
+<br />
+<br />
+<br />
+
+<div class="col-lg col-md- ml-auto mr-auto">
+    <div class="card card-login">
+
+        <div class="section section-contacts" style="padding:40px 0;">
+            <div class="row">
+                <div class="col-md-11 ml-auto mr-auto">
+                    <h3 class="text-center" style="color:black; margin-top:0; font-weight:bold;">게시판</h3>
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Subject" class="control-label"></label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Writer" class="control-label"></label>
+                            <input asp-for="Writer" class="form-control" />
+                            <span asp-validation-for="Writer" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Contents, new { @class = "control-label" })
+                            @Html.TextAreaFor(model => model.Contents
+                                , new { @id = "EditorContents", @class = "form-control", @rows = "10" })
+                            <script>CKEDITOR.replace("EditorContents");</script>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-primary" />&nbsp;
+                            <a asp-action="Index" class="btn btn-secondary">리스트</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

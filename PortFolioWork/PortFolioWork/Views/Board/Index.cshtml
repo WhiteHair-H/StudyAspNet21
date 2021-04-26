@@ -1,0 +1,82 @@
+﻿@model IEnumerable<PortFolioWork.Models.Board>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_GalleryLayout.cshtml";
+}
+
+@using X.PagedList;
+@using X.PagedList.Mvc.Core;
+@using X.PagedList.Web.Common;
+
+
+
+<br />
+<br />
+<br />
+<p>
+    <a asp-action="Create" class="btn-light" style="font-size:30px;">글쓰기</a>
+</p>
+<table class="table" style="color:white">
+    <thead>
+        <tr>
+            <th>
+                번호@*@Html.DisplayNameFor(model => model.First().Id)*@
+            </th>
+            <th>
+                제목@*@Html.DisplayNameFor(model => model.First().Subject)*@
+            </th>
+            <th>
+                작성자@*@Html.DisplayNameFor(model => model.First().Writer)*@
+            </th>
+            <th>
+                등록일@*@Html.DisplayNameFor(model => model.First().RegDate)*@
+            </th>
+            <th>
+                조회수@*@Html.DisplayNameFor(model => model.First().ReadCount)*@
+            </th>
+            <th>기능</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">
+                        @Html.DisplayFor(modelItem => item.Subject)
+                    </a>
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Writer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RegDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReadCount)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">수정</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">삭제</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="pull-center">
+    @Html.PagedListPager((IPagedList)Model,
+       page => Url.Action("Index", new { page }),
+       new PagedListRenderOptionsBase
+            {
+       LiElementClasses = new string[] { "page-item" },
+       PageClasses = new string[] { "page-link" },
+       Display = PagedListDisplayMode.IfNeeded
+
+        })
+</div>

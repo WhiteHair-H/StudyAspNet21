@@ -1,0 +1,120 @@
+﻿@model PortFolioWork.Models.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_ContactLayout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-12">
+        <h2 class="contact-title">문의사항</h2>
+    </div>
+    <div class="col-lg-8">
+        <form class="form-contact contact_form" asp-action="Index" >
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Contents" style="font-size:16px; font-style:italic"></label>
+                        <textarea asp-for="Contents" class="form-control w-100" id="message" cols="30" rows="9" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" placeholder=" Enter Message"></textarea>
+                        <span asp-validation-for="Contents" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="Name" class="form-control valid" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder="Enter your name">
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input asp-for="Email" class="form-control valid" id="email" type="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" placeholder="Email">
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="form-group mt-3">
+                <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    @if (ViewBag.Message != null)
+                    {
+                        <span>@ViewBag.Message</span>
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <div class="col-lg-3 offset-lg-1">
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+                <h3>South Korea, Busan.</h3>
+                <p>Rosemead, CA 91770</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-tablet"></i></span>
+            <div class="media-body">
+                <h3> 010-1111-2222</h3>
+                <p>Mon to Fri 9am to 6pm</p>
+            </div>
+        </div>
+        <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-email"></i></span>
+            <div class="media-body">
+                <h3>pddana@naver.com</h3>
+                <p>Send us your query anytime!</p>
+            </div>
+        </div>
+    </div>
+</div>
+@*<p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Contents)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Regdate)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contents)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Regdate)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+    }
+        </tbody>
+    </table>*@
