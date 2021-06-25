@@ -340,4 +340,8 @@
     <None Include="wwwroot\plugin\ckeditor\vendor\promise.js" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Player_Picture\" />
+  </ItemGroup>
+
 </Project>
