@@ -12,19 +12,28 @@
 
 ## WebPage
 ### 페이지목차
-# 1. Home
+#### 1. Home
 ![Home](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage.png "Home")
 
+#### 2. Profile
+![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ProfilePage.png "Profile")
 
-2. Profile
+#### 3. Style
+![Style](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Style")
 
+#### 4. Board
+![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
 
-4. Style
-5. Board
-6. Contact
-7. Login
-8. admin - Contact/Manager
-9. Logout
+#### 5. Contact
+![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+
+#### 6. Login
+![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+
+#### 7. admin - Contact/Manager
+![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+
+#### 8. Logout
 
 
 
