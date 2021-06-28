@@ -35,18 +35,6 @@
 ![admin](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ManagePage.png "admin")
 
 ## WebPagePlayer
-### 각 페이지 영상
+### 페이지 기능 영상
 #### 1. Homepage
 ![MoviePalyer1](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Homepage.gif "MoviePalyer1")
-
-#### 2. Boardpage
-![MoviePalyer2](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Board.gif "MoviePalyer2")
-
-#### 3. Contactpage
-![MoviePalyer3](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Contact.gif "MoviePalyer3")
-
-#### 4. Loginpage
-![MoviePalyer4](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Login.gif "MoviePalyer4")
-
-#### 5. Adminpage
-![MoviePalyer5](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Admin.gif "MoviePalyer5")
