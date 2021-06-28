@@ -11,7 +11,7 @@
 --------------------------
 
 ## WebPage
-### 페이지목차
+### 각 페이지 사진
 #### 1. Home
 ![Home](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage.png "Home")
 
@@ -22,20 +22,29 @@
 ![Style](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Style")
 
 #### 4. Board
-![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+![Board](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/BoardPage.png "Board")
 
 #### 5. Contact
-![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+![Contact](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ContactPage1.png "Contact")
 
 #### 6. Login
-![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+![Login](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/LoginPage.png "Login")
 
 #### 7. admin - Contact/Manager
-![Profile](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/StylePage.png "Profile")
+![admin](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ManagePage.png "admin")
 
-#### 8. Logout
+### 페이지에 관한 영상
+#### 1. Homepage
+![MoviePalyer1](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Homepage.gif "MoviePalyer1")
 
+#### 2. Boardpage
+![MoviePalyer2](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Board.gif "MoviePalyer2")
 
+#### 3. Contactpage
+![MoviePalyer3](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Contact.gif "MoviePalyer3")
 
+#### 4. Loginpage
+![MoviePalyer4](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Login.gif "MoviePalyer4")
 
-![MoviePalyer1](https://github.com/WhiteHair-H/MiniProjectDesktop/blob/main/WpfMiniProject/NaverMovieFinderApp/Player/MiniProject1.gif "MoviePalyer1")
+#### 5. Adminpage
+![MoviePalyer5](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Admin.gif "MoviePalyer5")
