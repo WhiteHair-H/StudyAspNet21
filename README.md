@@ -12,8 +12,8 @@
 
 ## WebPage
 ### 페이지목차
-1. Home
-![Home](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage.png "Home") ![Home2](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage2.png "Home2")
+# 1. Home
+![Home](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage.png "Home")
 
 
 2. Profile
