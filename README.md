@@ -3,14 +3,15 @@
 <img alt="C#" src="https://img.shields.io/badge/c%23%20-%23239120.svg?&style=for-the-badge&logo=c-sharp&logoColor=white"/>
 
 ## 🏳Contents
-- [WebPage](#WebPage)
+- [웹페이지사진](#WebPagePicture)
+- [웹페이지영상](#WebPagePlayer)
 
 ## ⏰기간
 - [2021-04-02] ~ [2021-04-16]
 
 --------------------------
 
-## WebPage
+## WebPagePicture
 ### 각 페이지 사진
 #### 1. Home
 ![Home](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/MainPage.png "Home")
@@ -33,6 +34,7 @@
 #### 7. admin - Contact/Manager
 ![admin](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ManagePage.png "admin")
 
+## WebPagePlayer
 ### 각 페이지 영상
 #### 1. Homepage
 ![MoviePalyer1](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Homepage.gif "MoviePalyer1")
