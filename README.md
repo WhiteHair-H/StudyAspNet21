@@ -33,7 +33,7 @@
 #### 7. admin - Contact/Manager
 ![admin](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Picture/ManagePage.png "admin")
 
-### 페이지에 관한 영상
+### 각 페이지 영상
 #### 1. Homepage
 ![MoviePalyer1](https://github.com/WhiteHair-H/StudyAspNet21/blob/main/PortFolio_Player%26Picture/Player/Homepage.gif "MoviePalyer1")
 
